@@ -1,0 +1,58 @@
+<style>
+  #input{
+  margin-left:40%;
+  
+  }
+  h1{
+    background-color:black;
+    color:white;
+    text-align:center;
+  }
+
+  
+</style>
+
+
+
+
+<html>
+  <head>
+    <title>Todo list</title>
+    <link rel="icon" href="date.png">
+  </head>
+  <body>
+    <h1>You can save your details  here</h1>
+    <input id="input">
+    <button onclick="insert()">add</button>
+    <ul id="listContainer">
+      <li>
+        Hello <button  onclick="removing(event)">delete</button>
+      </li>
+    </ul>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<script>
+  var input=document.getElementById("input")
+ var ul = document.getElementById("listContainer")
+ function insert(){
+var listItem=document.createElement("li")
+listItem.innerHTML=input.value +"<button onclick='removing(event)'>delete</button>"
+ul.append(listItem)
+
+ }
+ function removing(event){
+  event.target.parentElement.remove()
+
+ }
+</script>
